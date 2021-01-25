@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView, UpdateView
-from profiles.models import Profile
+from profiles.models import Profile,Relationship
 
 from .forms import CommentModelForm, PostModelForm
 from .models import Like, Post
@@ -102,3 +102,6 @@ class PostUpdateView(UpdateView):
         else:
             form.add_error(None, "You need to be the author of the post in order to update it")
             return super().form_invalid(form)
+
+
+
